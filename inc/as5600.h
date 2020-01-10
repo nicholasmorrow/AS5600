@@ -108,9 +108,9 @@ LICENSE:
 #define AS5600_HYSTERESIS_3LSB 4
 #define AS5600_HYSTERESIS_DEFAULT AS5600_HYSTERESIS_OFF
 #define AS5600_OUTPUT_STAGE_FULL                                               \
-  1 /* Ratiometric analog output ranging from GND-VCC*/
+    1 /* Ratiometric analog output ranging from GND-VCC*/
 #define AS5600_OUTPUT_STAGE_REDUCED                                            \
-  2 /* Ratiometric analog output ranging from 10% to 90% of VCC */
+    2 /* Ratiometric analog output ranging from 10% to 90% of VCC */
 #define AS5600_OUTPUT_STAGE_PWM 3 /* Digital PWM output */
 #define AS5600_OUTPUT_STAGE_DEFAULT AS5600_OUTPUT_STAGE_FULL
 #define AS5600_PWM_FREQUENCY_115HZ 1
@@ -137,32 +137,32 @@ LICENSE:
 #define AS5600_WATCHDOG_DEFAULT AS5600_WATCHDOG_ON
 /* AS5600 Status Definitions */
 #define AS5600_AGC_MIN_GAIN_OVERFLOW                                           \
-  (uint8_t)(1UL << 3) /*Error bit indicates b-field is too string */
+    (uint8_t)(1UL << 3) /*Error bit indicates b-field is too string */
 #define AS5600_AGC_MAX_GAIN_OVERFLOW                                           \
-  (uint8_t)(1UL << 4) /*Error bit indicates b-field is too weak */
+    (uint8_t)(1UL << 4) /*Error bit indicates b-field is too weak */
 #define AS5600_MAGNET_DETECTED                                                 \
-  (uint8_t)(1UL << 5) /*Status bit indicates b-field is detected */
+    (uint8_t)(1UL << 5) /*Status bit indicates b-field is detected */
 
 #define AS5600_DIR_CW 1
 #define AS5600_DIR_CCW 2
 
 #define AS5600_12_BIT_MASK (uint16_t)4095
 typedef struct {
-  I2C_HandleTypeDef *i2cHandle;
-  uint8_t i2cAddr;
-  GPIO_TypeDef *DirPort;
-  uint16_t DirPin;
-  uint8_t PositiveRotationDirection;
-  uint8_t LowPowerMode;
-  uint8_t Hysteresis;
-  uint8_t OutputMode;
-  uint8_t PWMFrequency;
-  uint8_t SlowFilter;
-  uint8_t FastFilterThreshold;
-  uint8_t WatchdogTimer;
+    I2C_HandleTypeDef *i2cHandle;
+    uint8_t i2cAddr;
+    GPIO_TypeDef *DirPort;
+    uint16_t DirPin;
+    uint8_t PositiveRotationDirection;
+    uint8_t LowPowerMode;
+    uint8_t Hysteresis;
+    uint8_t OutputMode;
+    uint8_t PWMFrequency;
+    uint8_t SlowFilter;
+    uint8_t FastFilterThreshold;
+    uint8_t WatchdogTimer;
 
-  /* Private */
-  volatile uint8_t confRegister[2];
+    /* Private */
+    volatile uint8_t confRegister[2];
 
 } AS5600_TypeDef;
 /***********************    FUNCTION PROTOTYPES    ***********************/
